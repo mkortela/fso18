@@ -3,7 +3,6 @@
 tehtävä 0.3
 ***************
 
-
 kayttaja->selain:
 note left of selain
 kayttaja klikkaa linkkiä muistiinpanot
@@ -38,6 +37,7 @@ note left of selain
  selain näyttää palvelimen palauttaman HTML:n
  jossa on listattu notet 
 end note
+
 
 
 ***************
