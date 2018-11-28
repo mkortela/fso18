@@ -93,8 +93,7 @@ kayttaja valitsee Muistiinpanot -- single page app
 end note
 selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
 note left of palvelin
-  muodostetaan HTML missä olemassaolevien
-  muistiinpanojen otsikot listattuna
+  muodostetaan HTML 
 end note
 palvelin->selain: status 200, sivun HTML-koodi
 
@@ -105,7 +104,7 @@ selain->palvelin: GET main.js
 palvelin->selain: status 200 main.js
 
 selain->palvelin: GET data.json
-note left of palvelin: 
+note left of selain: 
 suorita main.js 
 xhttp.open hakee data.json nimisen tiedoston
 end note
