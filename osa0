@@ -1,0 +1,150 @@
+
+***************
+tehtävä 0.3
+***************
+
+
+kayttaja->selain:
+note left of selain
+kayttaja klikkaa linkkiä muistiinpanot
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes
+note left of palvelin
+  muodostetaan HTML missä olemassaolevien
+  muistiinpanojen otsikot listattuna
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET main.css 
+palvelin->selain: status 200 main.css
+
+selain->palvelin: GET main.js
+palvelin->selain: status 200 main.js
+
+selain->palvelin: GET data.json
+note left of palvelin: 
+suorita main.js
+xhttp.open hakee data.json nimisen tiedoston
+end note
+
+palvelin->selain: status 200, data.json
+note left of selain: 
+onreadystatechange-event suorittaa js-koodin
+-lisää json lokin konsolille
+-listaa notet
+end note
+
+note left of selain
+ selain näyttää palvelimen palauttaman HTML:n
+ jossa on listattu notet 
+end note
+
+
+***************
+tehtävä 0.4
+***************
+
+kayttaja->selain:
+note left of selain
+kayttaja lisää  noten ja submittaa formin
+end note
+selain->palvelin: POST /new_note
+note left of palvelin
+ note lähtetään POST-menetelmällä osoitteeseen new_note
+end note
+palvelin->selain: status 302, lähetys onnistui
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes
+note left of palvelin
+  sivu new_note kutsuu sivua notes
+  muodostetaan HTML missä olemassaolevien
+  muistiinpanojen otsikot listattuna
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET main.js
+palvelin->selain: status 200 main.js
+
+selain->palvelin: GET data.json
+note left of palvelin: 
+suorita main.js
+xhttp.open hakee data.json nimisen tiedoston
+end note
+
+palvelin->selain: status 200, data.json
+note left of selain: 
+onreadystatechange-event suorittaa js-koodin
+-lisää json lokin konsolille
+-listaa notet
+end note
+
+note left of selain
+ selain näyttää palvelimen palauttaman HTML:n
+ jossa on listattu notet 
+end note
+
+***************
+tehtävä 0.5
+***************
+
+kayttaja->selain:
+note left of selain
+kayttaja valitsee Muistiinpanot -- single page app
+end note
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin
+  muodostetaan HTML missä olemassaolevien
+  muistiinpanojen otsikot listattuna
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET main.css
+palvelin->selain: status 200 main.css
+
+selain->palvelin: GET main.js
+palvelin->selain: status 200 main.js
+
+selain->palvelin: GET data.json
+note left of palvelin: 
+suorita main.js 
+xhttp.open hakee data.json nimisen tiedoston
+end note
+
+palvelin->selain: status 200, data.json
+note left of selain: 
+onreadystatechange-event suorittaa js-koodin
+-lisää json lokin konsolille
+-listaa notet
+end note
+
+note left of selain
+ selain näyttää palvelimen palauttaman HTML:n
+ jossa on listattu notet 
+end note
+
+***************
+tehtävä 0.6
+***************
+
+kayttaja->selain:
+note left of selain
+kayttaja lisää  noten ja submittaa formin
+end note
+
+selain->palvelin: POST json muotoinen str new_note_spa
+note left of palvelin
+ note lähtetään POST-menetelmällä json-muotoinen merkkijono osoitteeseen new_note_spa
+end notex
+palvelin->selain: status 201
+
+palvelin->selain: GET data.json
+note left of selain: 
+onreadystatechange-event suorittaa js-koodin
+-lisää json lokin konsolille
+-listaa notet
+end note
+
+note left of selain
+ selain näyttää palvelimen palauttaman HTML:n
+ jossa on listattu notet 
+end note
