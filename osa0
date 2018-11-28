@@ -45,7 +45,7 @@ tehtävä 0.4
 ***************
 
 kayttaja->selain:
-note left of selain
+note right of kayttaja
 kayttaja lisää  noten ja submittaa formin
 end note
 selain->palvelin: POST /new_note
@@ -66,7 +66,7 @@ selain->palvelin: GET main.js
 palvelin->selain: status 200 main.js
 
 selain->palvelin: GET data.json
-note left of palvelin: 
+note left of selain: 
 suorita main.js
 xhttp.open hakee data.json nimisen tiedoston
 end note
